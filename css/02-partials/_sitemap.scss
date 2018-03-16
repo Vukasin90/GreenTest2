@@ -1,0 +1,254 @@
+.sitemap-section {
+    width: 100%;
+    height: 884px;
+    background-color: $bg-color;
+    border-top: 2px solid $grey-bg;
+    aside {
+        width: 255px;
+    }
+}
+
+.sitemap-wrap {
+    width: 1140px;
+    margin: 0 auto;
+    padding: 20px 16px 50px 16px;
+    position: relative;
+    .breadcrumb {
+        display: inline-block;
+        font-size: 14px;
+        line-height: 40px;
+        margin-bottom: 35px;
+        &:after {
+            content: "/";
+            font-size: 14px;
+            margin: 0 5px;
+        }
+    }
+
+    &:after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}
+
+.sidebar-sitemap {
+    display: inline-block;
+    width: 255px;
+    height: 211px;
+    background-color: $white;
+    padding: 5px 0 17px 21px;
+    position: relative;
+    li {
+        list-style: none;
+        a {
+            color: #333;
+            font-size: 15px;
+            line-height: 40px;
+            text-transform: uppercase;
+            &:hover {
+                font-weight: bold;
+                color: #bf261f;
+            }
+        }
+
+        &:nth-child(4) {
+            &:before {
+                content: "";
+                @include triangle-right($grey-bg, inline-block);
+                position: absolute;
+                left: 12px;
+                bottom: 20px;
+            }
+        }
+    }
+
+    .active {
+        font-weight: bold;
+        color: #bf261f;
+    }
+}
+
+.main-content-sitemap {
+    background-color: $white;
+    padding: 40px 60px 0;
+    width: 825px;
+    height: 735px;
+    position: absolute;
+    top: 95px;
+    left: 301px;
+    h1 {
+        text-align: center;
+        font-size: 24px;
+        color: $light-blue;
+        line-height: 18px;
+        text-transform: uppercase;
+        display: block;
+        width: 100%;
+        height: 54px;
+        border-bottom: 1px solid $grey-bg;
+        margin-bottom: 45px;
+    }
+
+    .nav-links {
+        .about-us {
+            position: absolute;
+            top: 137px;
+            left: 61px;
+            &:after {
+                display: block;
+                content: "";
+                border: 1px solid $grey-bg;
+                margin: 34px 0;
+            }
+        }
+
+        .brand {
+            position: absolute;
+            bottom: 50px;
+            left: 60px;
+        }
+
+        .investors {
+            position: absolute;
+            left: 305px;
+            top: 139px;
+        }
+        
+        .media-centre {
+            position: absolute;
+            left: 551px;
+            top: 136px;
+            &:after {
+                display: block;
+                content: "";
+                border: 1px solid $grey-bg;
+                margin: 34px 0;
+            }
+        }
+        
+        .contact-us {
+            position: absolute;
+            left: 551px;
+            top: 324px;
+        }
+    }
+
+    .sitemap-nav {
+        display: inline-block;
+        width: 225px;
+        li {
+            list-style: none;
+            a {
+                font-size: 16px;
+                line-height: 30px;
+                color: $hover-red;
+                font-weight: bold;
+            }
+        }
+
+        .sub-nav {
+            li > a {
+                font-size: 14px;
+                line-height: 30px;
+                font-weight: initial;
+                margin-left: 20px;
+            }
+        }
+
+        h4 {
+            font-size: 22px;
+            text-transform: uppercase;
+            color: $light-blue;
+            font-weight: normal;
+        }
+    }
+}
+
+@include media-qr (1200px) {
+    .sidebar-sitemap {
+        display: none;
+    }
+
+    .main-content-sitemap {
+        width: 690px;
+        left: 37px;
+        .nav-links {
+            .about-us {
+                left: 30px;
+                &:after {
+                    width: 190px;
+                }
+            }
+
+            .investors {
+                left: 255px;
+            }
+
+            .media-centre {
+                left: 461px;
+                &:after {
+                    width: 190px;
+                }
+            }
+
+            .contact-us {
+                left: 464px;
+            }
+
+            .brand {
+                left: 30px;
+            }
+        }
+    }
+
+    .sitemap-wrap {
+        width: 768px;
+        .breadcrumb {
+        }
+    }
+}
+
+@include media-qr (767px) {
+    .sitemap-section {
+        height: auto;
+        .sitemap-wrap {
+            width: 100%;
+        }
+    }
+
+    .main-content-sitemap {
+        position: static;
+        height: auto;
+        width: 100%;
+        padding: 30px 26px 30px 26px;;
+        .nav-links {
+            .sitemap-nav {
+                display: block;
+                margin: 0 auto;
+                // text-align: center;
+            }
+
+            .about-us,
+            .investors,
+            .media-centre,
+            .contact-us,
+            .brand {
+                position: static;
+                &::after {
+                    content: '';
+                    display: block;
+                    border: 1px solid $grey-bg;
+                    width: 200px;
+                    margin: 30px 0;
+                }
+            }
+            
+            .contact-us {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}

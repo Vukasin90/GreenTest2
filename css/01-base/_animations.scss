@@ -1,0 +1,11 @@
+.drop-down:hover > .drop-down-menu  {
+    opacity: 0;
+    perspective: 1000px;
+    animation: menu-animation 300ms ease-in-out forwards;
+}
+
+@keyframes menu-animation {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+        
+}

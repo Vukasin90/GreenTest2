@@ -1,0 +1,32 @@
+@mixin triangle-up($arrow-color, $display) {
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    display: $display;
+    border-bottom: 5px solid $arrow-color;
+}
+
+@mixin triangle-right($arrow-color, $display) {
+    width: 0; 
+    height: 0; 
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    display: $display;
+    border-left: 5px solid $arrow-color;
+}
+
+@mixin triangle-down($arrow-color) {
+        width: 0; 
+        height: 0; 
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid $arrow-color;
+        display: inline-block;
+}
+
+@mixin media-qr ($width: 768px) {
+    @media (max-width: $width) {
+        @content;
+    }
+}

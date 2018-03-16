@@ -1,0 +1,84 @@
+.lightbox-directors {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+    display: none;
+    &[data-state="visible"] {
+        display: block;
+        animation: lb-animation 300ms ease-in-out;
+    }
+}
+
+.lb-directors-wrapper {
+    width: 980px;
+    height: 503px;
+    background-color: $white;
+    padding: 40px 30px 0 30px;
+    position: absolute;
+    top: 130px;
+    left: calc(50% - 490px);
+    .lightbox-img {
+        display: inline-block;
+        width: 214px;
+        height: 308px;
+        background-color: grey;
+        float: left;
+        margin-right: 29px;
+    }
+
+    h4 {
+        display: inline-block;
+        font-size: 18px;
+        color: #333;
+        line-height: 18px;
+        margin-bottom: 10px;
+    }
+
+    span {
+        display: block;
+        font-size: 16px;
+        color: #333;
+        line-height: 24px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        display: inline-block;
+        float: left;
+        width: 677px;
+        text-align: left;
+        font-size: 16px;
+        line-height: 24px;
+        color: #333;
+    }
+
+    .close-button-two {
+        color: $grey-bg;
+        font-size: 27px;
+        position: absolute;
+        top: 18px;
+        right: 10px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+@include media-qr () {
+    .lb-directors-wrapper {
+        left: calc(50% - 345px);
+        width: 690px;
+        height: 709px;
+        .lightbox-img {
+            width: 210px;
+        }
+        
+        p {
+            width: 390px;
+        }
+    }
+}
